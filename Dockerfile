@@ -8,17 +8,3 @@ RUN apt-get update -y && \
 	apt-get install -y ubuntu-make && \
 	apt-get clean -y all
 
-RUN ((echo "/opt/eclipse";echo "")|umake -v ide eclipse)
-
-# Add the dockerfile to make rebuilds from the image easier
-ADD Dockerfile /Dockerfile
-ADD eclipse.sh /root/eclipse
-
-RUN chmod 500 /root/eclipse
-
-VOLUME /workspace
-ENV HOME /workspace
-WORKDIR /workspace
-
-ENTRYPOINT ["/root/eclipse"]
-
