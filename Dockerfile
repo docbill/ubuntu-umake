@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER Bill C Riemers https://github.com/docbill
 
 RUN apt-get update -y && \
